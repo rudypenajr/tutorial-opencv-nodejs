@@ -1,6 +1,6 @@
 const cv = require('opencv');
 
-cv.readImage('img/opencv-loaded-image.jpg', function(err, img) {
+cv.readImage('img/loaded-logo.jpg', function(err, img) {
   // The loaded image is an Object
   // It represents the Basic Data Structure to work with in OpenCV - Matrix
   // Matrix, where one field is one pixel of the image
@@ -25,9 +25,12 @@ cv.readImage('img/opencv-loaded-image.jpg', function(err, img) {
   // img.convertHSVscale()
 
   // Cropping Image
-  var newImg = img.copy();
-  croppedImg = newImg.crop(500,500,500,500);
-  copyCroppedImg.save('./img/croppedImage.jpg');
+  // var newImg = img.copy();
+  // croppedImg = newImg.crop(500,500,500,500);
+  // copyCroppedImg.save('./img/croppedImage.jpg');
+
+  // img.dilate(3);
+  img.erode(3);
 
   // save img
   img.save('./img/myNewImage.jpg');
